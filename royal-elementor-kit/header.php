@@ -52,7 +52,7 @@
 
 		<?php if ( has_nav_menu('main') ) : ?>
 		<nav class="main-navigation" role="navigation">
-			<?php wp_nav_menu( [ 'theme_location' => 'main' ] ); ?>
+			<?php wp_nav_menu( [ 'theme_location' => 'main', 'menu_class' => 'rek-menu' ] ); ?>
 		</nav>
 		<?php endif; ?>
 

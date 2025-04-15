@@ -79,12 +79,11 @@ function royal_elementor_kit_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'royal_elementor_kit_scripts' );
 
-
 /*
 ** Notices
 */
-require_once get_parent_theme_file_path( '/inc/activation/class-welcome-notice.php' );
-require_once get_parent_theme_file_path( '/inc/activation/class-rating-notice.php' );
+require_once get_parent_theme_file_path( '/inc/admin/activation/class-welcome-notice.php' );
+require_once get_parent_theme_file_path( '/inc/admin/activation/class-rating-notice.php' );
 
 add_action( 'after_switch_theme', 'rek_activation_time');
 add_action('after_setup_theme', 'rek_activation_time');
@@ -94,3 +93,14 @@ function rek_activation_time() {
 		add_option( 'rek_activation_time', strtotime('now') );
 	}
 }
+
+
+/*
+** Admin Menu
+*/
+require_once get_parent_theme_file_path( '/inc/admin/menu/rek-admin-menu.php' );
+
+/*
+** Customizer
+*/
+require_once get_parent_theme_file_path( '/inc/admin/customizer/customizer.php' );
