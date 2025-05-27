@@ -57,7 +57,7 @@ class REK_Rating_Notice {
                             <h3>Thank you for using Royal Elementor Kit Theme to build this website!</h3>
                             <p>Could you please do us a BIG favor and give it a 5-star rating on WordPress? Just to help us spread the word and boost our motivation.</p>
                             <p>
-                                <a href="https://wordpress.org/support/theme/royal-elementor-kit/reviews/?filter=5" target="_blank" class="rek-you-deserve-it button button-primary">OK, you deserve it!</a>
+                                <a href="https://wordpress.org/support/theme/royal-elementor-kit/reviews/" target="_blank" class="rek-you-deserve-it button button-primary">OK, you deserve it!</a>
                                 <a class="rek-maybe-later"><span class="dashicons dashicons-clock"></span> Maybe Later</a>
                                 <a class="rek-already-rated"><span class="dashicons dashicons-yes"></span> I Already did</a>
                             </p>
