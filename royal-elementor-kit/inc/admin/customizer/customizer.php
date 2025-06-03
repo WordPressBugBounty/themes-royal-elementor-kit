@@ -37,7 +37,7 @@ function rek_include_customizer_files( $wp_customize ) {
                     sprintf(
                         '<strong>%s</strong> comes with Elementor based <strong>%s</strong> library with various designs to pick from.',
                         esc_html__('Royal Elementor Kit', 'royal-elementor-kit'),
-                        esc_html__('100+ sites', 'royal-elementor-kit')
+                        esc_html__('140+ sites', 'royal-elementor-kit')
                     ),
                     esc_html__('100+ Premium Elementor Widgets', 'royal-elementor-kit'),
                     esc_html__('like Post and Product Grid, Slider, Menu, Theme & Woocommerce Shop Builder, Popup Builder', 'royal-elementor-kit'),
