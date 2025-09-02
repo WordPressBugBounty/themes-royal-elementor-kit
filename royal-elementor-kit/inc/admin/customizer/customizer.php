@@ -31,7 +31,7 @@ function rek_include_customizer_files( $wp_customize ) {
                 'section' => 'rek_general_section',
                 'type'    => 'hidden',
                 'description' => sprintf(
-                    '<p style="margin-bottom: 15px;">%s</p><strong><a href="https://royal-elementor-addons.com/royal-elementor-kit/?ref=royal-elementor-theme-customizer#widgets" target="_blank">%s</a> %s</strong><br><br>
+                    '<p style="margin-bottom: 15px;">%s</p><strong><a href="https://royal-elementor-addons.com/royal-elementor-kit/?ref=royal-elementor-theme-customizer-textlink#widgets" target="_blank">%s</a> %s</strong><br><br>
                     <a href="%s" class="button button-primary widefat rek-get-started-btn" style="margin-right: 5px;">%s <span class="dashicons dashicons-arrow-right-alt"></span></a>
                     <a href="%s" class="button button-secondary widefat" target="_blank">%s <span class="dashicons dashicons-external"></span></a>',
                     sprintf(
