@@ -32,6 +32,8 @@ class REK_Welcome_Notice {
 		add_action( 'wp_ajax_nopriv_rek_install_activate_elementor', [$this, 'install_activate_elementor'] );
 		add_action( 'wp_ajax_rek_install_activate_royal_addons', [$this, 'install_activate_royal_addons'] );
 		add_action( 'wp_ajax_nopriv_rek_install_activate_royal_addons', [$this, 'install_activate_royal_addons'] );
+		add_action( 'wp_ajax_rek_install_activate_backup', [$this, 'install_activate_backup'] );
+		add_action( 'wp_ajax_nopriv_rek_install_activate_backup', [$this, 'install_activate_backup'] );
 
 		add_action( 'wp_ajax_rek_cancel_elementor_redirect', [$this, 'rek_cancel_elementor_redirect'] );
 	}
@@ -274,6 +276,41 @@ class REK_Welcome_Notice {
 	}
 
 	/**
+	** Install Royal Backup Reset.
+	*/
+	public function install_activate_backup() {
+		check_ajax_referer( 'nonce', 'nonce' );
+
+		if ( ! current_user_can( 'install_plugins' ) ) {
+			wp_send_json_error( esc_html__( 'Insufficient permissions to install the plugin.', 'royal-elementor-kit' ) );
+			wp_die();
+		}
+
+		$plugin_status = $this->get_plugin_status( 'royal-backup-reset/royal-backup-reset.php' );
+
+		if ( 'not_installed' === $plugin_status ) {
+			$this->install_plugin( 'royal-backup-reset' );
+			$this->activate_plugin( 'royal-backup-reset/royal-backup-reset.php' );
+
+		} else {
+			if ( 'inactive' === $plugin_status ) {
+				$this->activate_plugin( 'royal-backup-reset/royal-backup-reset.php' );
+			} elseif ( 'inactive_update' === $plugin_status || 'active_update' === $plugin_status ) {
+				$this->update_plugin( 'royal-backup-reset/royal-backup-reset.php' );
+				$this->activate_plugin( 'royal-backup-reset/royal-backup-reset.php' );
+			}
+		}
+
+		if ( 'active' === $this->get_plugin_status( 'royal-backup-reset/royal-backup-reset.php' ) ) {
+			wp_send_json_success();
+		}
+
+		wp_send_json_error( esc_html__( 'Failed to initialize or activate backup plugin.', 'royal-elementor-kit' ) );
+
+		wp_die();
+	}
+
+	/**
 	** Render Notice
 	*/
 	public function render_notice( $notice = 'welcome' ) {
@@ -431,6 +468,7 @@ class REK_Welcome_Notice {
 			'ajax_url' => admin_url( 'admin-ajax.php' ),
 			'elementor_nonce' => wp_create_nonce( 'nonce' ),
 			'royal_addons_nonce' => wp_create_nonce( 'nonce' ),
+			'backup_nonce' => wp_create_nonce( 'nonce' ),
 			'failed_message' => esc_html__( 'Something went wrong, contact support.', 'royal-elementor-kit' ),
 		] );
 

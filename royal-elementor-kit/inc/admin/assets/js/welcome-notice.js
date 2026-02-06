@@ -48,21 +48,32 @@
 
 					$.post( rek_localize.ajax_url, royalAddonsData, function( response ) {
 						if ( response.success ) {
+							console.log('royal addons installed');
 
-							var elementorRedirect = {
-								'action' : 'rek_cancel_elementor_redirect',
+							// Install Royal Backup Reset
+							var backupData = {
+								'action' : 'rek_install_activate_backup',
+								'nonce' : rek_localize.backup_nonce
 							};
 
-							$.post( rek_localize.ajax_url, elementorRedirect, function( response ) {
-								console.log('royal addons installed');
+							$.post( rek_localize.ajax_url, backupData, function( response ) {
+								if ( response.success ) {
+									console.log('backup plugin installed');
+								}
 
-								setTimeout(function() {
-									$self.html('Redirecting to Templates Kit page <span class="dot-flashing"></span>');
+								var elementorRedirect = {
+									'action' : 'rek_cancel_elementor_redirect',
+								};
 
-									setTimeout( function() {
-										window.location = $href;
-									}, 1000 );
-								}, 500);
+								$.post( rek_localize.ajax_url, elementorRedirect, function( response ) {
+									setTimeout(function() {
+										$self.html('Redirecting to Templates Kit page <span class="dot-flashing"></span>');
+
+										setTimeout( function() {
+											window.location = $href;
+										}, 1000 );
+									}, 500);
+								});
 							});
 
 						}
