@@ -3,7 +3,7 @@
 Author: WP Royal
 Requires at least: WordPress 4.7+
 Tested up to: WordPress 6.9.4
-Version: 1.0.143
+Version: 1.0.145
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.en.html
 Tags: blog, e-commerce, one-column, custom-background, custom-colors, full-width-template, custom-menu, custom-logo, featured-images, sticky-post, theme-options, threaded-comments, translation-ready
@@ -16,7 +16,7 @@ Truly all in one Solution For Elementor Lovers. 140+ Elementor Templates KIT, 90
 
 == Copyright ==
 
-Royal Elementor Kit, Copyright 2025 wp-royal-themes.com
+Royal Elementor Kit, Copyright 2026 wp-royal-themes.com
 It is distributed under the terms of the GNU GPL
 
 This program is free software: you can redistribute it and/or modify
