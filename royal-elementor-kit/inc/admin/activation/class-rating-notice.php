@@ -49,9 +49,9 @@ class REK_Rating_Notice {
     public function rek_render_rating_notice() {
         if ( is_admin() ) {
 
-            echo '<div class="notice rek-rating-notice is-dismissible" style="border-left-color: #0073aa!important; display: flex; align-items: center;">
+            echo '<div class="notice rek-rating-notice is-dismissible" style="border-left-color: #7A75FF!important; display: flex; align-items: center; position: relative;">
                         <div class="rek-rating-notice-logo">
-                        <img class="rek-logo" src="'.get_theme_file_uri().'/inc/admin/assets/img/logo-128x128.png">
+                            <img src="' . esc_url( get_theme_file_uri( '/inc/admin/assets/img/logo-128x128.png' ) ) . '">
                         </div>
                         <div>
                             <h3>Thank you for using Royal Elementor Kit Theme to build this website!</h3>
@@ -62,6 +62,7 @@ class REK_Rating_Notice {
                                 <a class="rek-already-rated"><span class="dashicons dashicons-yes"></span> I Already did</a>
                             </p>
                         </div>
+                        <button type="button" class="notice-dismiss"><span class="screen-reader-text">Dismiss this notice.</span></button>
                 </div>';
         }
     }
@@ -106,7 +107,9 @@ class REK_Rating_Notice {
 
         <style>
             .rek-rating-notice {
-              padding: 0 15px;
+              padding: 10px 38px 10px 20px;
+              border-top: 0;
+              border-bottom: 0;
             }
 
             .rek-rating-notice-logo {
@@ -128,24 +131,63 @@ class REK_Rating_Notice {
               margin-bottom: 15px;
             }
 
-            .rek-already-rated,
-            .rek-maybe-later {
-              text-decoration: none;
+            .rek-maybe-later,
+            .rek-already-rated {
+              text-decoration: none !important;
               margin-left: 12px;
               font-size: 14px;
               cursor: pointer;
             }
 
+            .rek-maybe-later:hover,
+            .rek-maybe-later:focus,
+            .rek-maybe-later:active,
+            .rek-already-rated:hover,
+            .rek-already-rated:focus,
+            .rek-already-rated:active {
+              text-decoration: none !important;
+            }
+
             .rek-already-rated .dashicons,
             .rek-maybe-later .dashicons {
-              vertical-align: sub;
+              vertical-align: middle;
             }
 
-            .rek-logo {
-                height: 100%;
-                width: auto;
+            .rek-rating-notice .notice-dismiss {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                position: absolute;
+                top: 8px;
+                right: 8px;
+                border: none;
+                margin: 0;
+                padding: 0;
+                width: 32px;
+                height: 32px;
+                background: none;
+                color: #787c82;
+                cursor: pointer;
             }
 
+            .rek-rating-notice .notice-dismiss:before {
+                background: none;
+                color: #787c82;
+                content: '\\f153';
+                display: block;
+                font: normal 16px/1 dashicons;
+                speak: never;
+                height: 20px;
+                width: 20px;
+                line-height: 20px;
+                text-align: center;
+                -webkit-font-smoothing: antialiased;
+                -moz-osx-font-smoothing: grayscale;
+            }
+
+            .rek-rating-notice .notice-dismiss:hover:before {
+                color: #d63638;
+            }
         </style>
         ";
     }

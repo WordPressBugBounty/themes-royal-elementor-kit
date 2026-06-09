@@ -2,12 +2,21 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  border: none;
+  background-color: #fff !important;
+  border: none !important;
+  border-left: none !important;
   box-shadow: 0 0 5px rgb(0 0 0 / 0.1);
   padding: 30px !important;
+}
+
+.rek-notice.notice-success {
+  background-color: #fff !important;
 }
 
 .rek-notice .welcome-message {
@@ -25,23 +34,50 @@
 
 .rek-notice .welcome-message .action-buttons {
   margin-top: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 7px;
 }
 
 .rek-notice .welcome-message .action-buttons a {
-  padding: 7px 20px;
+  display: -webkit-inline-box !important;
+  display: -ms-inline-flexbox !important;
+  display: inline-flex !important;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 4px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 7px 20px !important;
+  border: 2px solid transparent;
+  height: auto !important;
   background-color: #6A4BFF;
+  color: #fff;
   box-shadow: none !important;
+  vertical-align: middle;
 }
 
 .rek-notice .welcome-message .action-buttons a:last-child {
-  margin-left: 7px;
+  margin-left: 0;
+  padding: 7px 20px !important;
   background-color: transparent;
-  border: 2px solid #6A4BFF;
+  border-color: #6A4BFF;
   color: #6A4BFF;
 }
 
 .rek-notice .welcome-message .action-buttons a:hover {
   background-color: #583ed7;
+  color: #fff;
 }
 
 .rek-notice .welcome-message .action-buttons a:last-child:hover {
@@ -50,8 +86,31 @@
 }
 
 .rek-notice .welcome-message .action-buttons a .dashicons {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 12px;
+  height: 12px;
   font-size: 12px;
-  line-height: 30px;
+  line-height: 1;
+  margin: 0;
+  color: #fff;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+}
+
+.rek-notice .welcome-message .action-buttons a:last-child .dashicons {
+  color: #6A4BFF;
+}
+
+.rek-notice .welcome-message .action-buttons a:last-child:hover .dashicons {
+  color: #fff;
 }
 
 .rek-notice .image-wrap {
